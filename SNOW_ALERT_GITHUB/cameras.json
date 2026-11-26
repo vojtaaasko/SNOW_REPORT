@@ -1,0 +1,29 @@
+[
+  {
+    "id": "jicin_i16",
+    "name": "Jičín – I/16 (kandidát k ověření)",
+    "location": "Jičín",
+    "road": "I/16",
+    "reference_url": "https://dopravniinfo.cz/",
+    "image_url": "",
+    "notes": "Doplň pouze přímou veřejnou URL JPEG/PNG snímku."
+  },
+  {
+    "id": "vrchlabi_ii295",
+    "name": "Vrchlabí – II/295 (kandidát k ověření)",
+    "location": "Vrchlabí",
+    "road": "II/295",
+    "reference_url": "https://dopravniinfo.cz/",
+    "image_url": "",
+    "notes": "Doplň pouze přímou veřejnou URL JPEG/PNG snímku."
+  },
+  {
+    "id": "spindleruv_mlyn_road",
+    "name": "Špindlerův Mlýn – silniční kamera (k nalezení)",
+    "location": "Špindlerův Mlýn",
+    "road": "II/295",
+    "reference_url": "https://dopravniinfo.cz/",
+    "image_url": "",
+    "notes": "Zatím není ověřen přímý veřejný snímek."
+  }
+]
