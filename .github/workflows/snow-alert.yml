@@ -3,49 +3,29 @@ name: SNOW ALERT
 
 on:
   schedule:
-  - cron: "7,17,27,37,47,57 * * * *"
+    - cron: "13,23,33,43,53 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: snow-alert-monitor
-  cancel-in-progress: false
-
 jobs:
-  monitor:
+  snow-alert:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
 
     steps:
-      - name: Stáhnout projekt
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Nastavit Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.11"
 
-      - name: Obnovit stav bota
-        uses: actions/cache@v4
-        with:
-          path: data/snow_alert.sqlite3
-          key: snow-alert-state-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: |
-            snow-alert-state-
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-      - name: Nainstalovat závislosti
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Spustit kontrolu
+      - name: Run snow alert
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          POLL_SECONDS: "600"
-          FORECAST_MIN_HOURS: "3"
-          FORECAST_MAX_HOURS: "12"
-          SNOW_THRESHOLD_CM: "0.1"
-          CAMERA_TIMEOUT: "20"
         run: python main.py
