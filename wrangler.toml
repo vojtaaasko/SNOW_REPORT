@@ -1,0 +1,7 @@
+
+name = "snow-alert"
+main = "src/index.js"
+compatibility_date = "2026-11-27"
+
+[triggers]
+crons = ["*/10 * * * *"]
