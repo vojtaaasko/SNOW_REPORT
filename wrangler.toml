@@ -4,4 +4,4 @@ main = "src/index.js"
 compatibility_date = "2026-11-27"
 
 [triggers]
-crons = ["*/10 * * * *"]
+crons = ["0 * * * *"]
