@@ -5,3 +5,7 @@ compatibility_date = "2026-11-27"
 
 [triggers]
 crons = ["0 * * * *"]
+
+[[kv_namespaces]]
+binding = "SNOW_ALERT_STATE"
+id = "8725aa1ab3dc4c269848bf5cb7963a05"
